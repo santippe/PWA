@@ -12,9 +12,15 @@
 <body class="main">
     <div id="container"></div>
     <a href="/main.html" class="button bottom">BACK</a>
+    <div class="button" onclick="testJson()">CALL ME</div>
     <script>
         let data = []
         addElements(document.getElementById('container'), data, createAnchorsWithData(['button', 'smallList']))
+
+        async function testJson() {
+            let res = await callServerFecth('http://localhost:8080/test.json')
+            console.log(res)
+        }
     </script>
 </body>
 

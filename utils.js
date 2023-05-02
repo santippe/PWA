@@ -15,6 +15,12 @@ function callServer(method, url, someToSend, success, fail, timeout) {
     xhr.send(someToSend)
 }
 
+async function callServerFecth(url) {
+    let response = await fetch(url)
+    let result = await response.json()
+    return result;
+}
+
 function addElements(container, list, callBackItems) {
     let data = [
         { name: 'John', age: 25 },
