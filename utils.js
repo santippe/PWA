@@ -15,8 +15,8 @@ function callServer(method, url, someToSend, success, fail, timeout) {
     xhr.send(someToSend)
 }
 
-async function callServerFecth(url) {
-    let response = await fetch(url)
+async function callServerFecth(url, options) {
+    let response = await fetch(url, options)
     let result = await response.json()
     return result;
 }

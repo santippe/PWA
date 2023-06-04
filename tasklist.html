@@ -17,6 +17,11 @@
         let data = []
         addElements(document.getElementById('container'), data, createAnchorsWithData(['button', 'smallList']))
 
+        async function getItemList() {
+            let res = await callServerFecth('http://localhost:8080/test.json')
+            console.log(res)
+        }
+
         async function testJson() {
             let res = await callServerFecth('http://localhost:8080/test.json')
             console.log(res)
