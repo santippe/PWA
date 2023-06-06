@@ -27,6 +27,7 @@ function addElements(container, list, callBackItems) {
         { name: 'Emily', age: 30 },
         { name: 'Adam', age: 28 },
     ];
+    data = list
 
     // Get reference to the parent div element
     let parentDiv = container; //document.getElementById('parent');
@@ -39,7 +40,7 @@ function addElements(container, list, callBackItems) {
     });
 }
 
-function createAnchorsWithData(classNames) {
+function createAnchorsWithData(classNames, callback) {
     return (item) => {
         // Create a new div element for each item in the data array
         let childDiv = document.createElement('div');
@@ -51,7 +52,7 @@ function createAnchorsWithData(classNames) {
 
         // Add the item's data as text content to the child div element
         //childDiv.textContent = `${item.name} - ${item.age}`;
-        childDiv.textContent = `${item.name}`;
+        callback(item, childDiv);
 
         return childDiv
     }

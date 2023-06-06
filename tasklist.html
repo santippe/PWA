@@ -14,9 +14,6 @@
     <a href="/main.html" class="button bottom">BACK</a>
     <div class="button" onclick="testJson()">CALL ME</div>
     <script>
-        let data = []
-        addElements(document.getElementById('container'), data, createAnchorsWithData(['button', 'smallList']))
-
         async function getItemList() {
             let res = await callServerFecth('http://localhost:8080/test.json')
             console.log(res)
@@ -25,7 +22,20 @@
         async function testJson() {
             let res = await callServerFecth('http://localhost:8080/test.json')
             console.log(res)
+            return res;
         }
+        (async () => {
+            let data = []
+            
+            data = await testJson();
+
+            addElements(document.getElementById('container'), data,
+                createAnchorsWithData(['button', 'smallList'], (item, childDiv) => {
+                    childDiv.textContent = `${item.Prova}`
+                })
+            )
+        })();
+
     </script>
 </body>
 

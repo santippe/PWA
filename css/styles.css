@@ -63,6 +63,7 @@
   border-radius: 2px;
   text-decoration: none;
   margin-bottom: 5px;
+  border-radius: 2px;
 }
 
 input[type=text],[type=password] {
@@ -75,6 +76,7 @@ input[type=text],[type=password] {
   border-radius: 5px;
   border: 1px solid #1e86af;
   outline: none;
+  border-radius: 2px;
 }
 
 .smallList {
